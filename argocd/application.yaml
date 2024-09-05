@@ -1,14 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: microservices-app
+  name: microservices-app1
   namespace: argocd
 spec: 
   project: default
   source: 
+    #chart: onlineboutique
     repoURL: https://github.com/connellian/microservices-demo.git
-    targetRevision: HEAD
-    path: argocd
+    path: helm-chart
+    helm:
+      releaseName: onlineboutique
   destination: 
     server: https://kubernetes.default.svc
     namespace: default
