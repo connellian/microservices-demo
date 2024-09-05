@@ -36,7 +36,7 @@ spec:
     helm:
       releaseName: onlineboutique
       valueFiles:
-        - helm-chart/values1.yaml
+        - /helm-chart/values1.yaml
   destination: 
     server: https://kubernetes.default.svc
     namespace: default1
